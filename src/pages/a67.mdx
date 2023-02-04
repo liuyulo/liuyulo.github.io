@@ -1,0 +1,74 @@
+---
+layout: ../layouts/Main.astro
+title: A67
+---
+
+# Term Test 1
+
+## PMI
+
+> gotta follow the PA2 template
+
+<details class="example" open>
+<summary>(PMI) wts $4^n-1$ is divisible by $3$ for any integer $n>0$</summary>
+let $P(n)$ be the proposition $4^n-1$ is divisible by $3$
+- we use PMI to prove that $P(n)$ is true for every integer $n>0$
+- basis step
+  - $P(0)$ is the statement $4^0-1$ is divisible by $3$
+  - this is true because $4^0-1=1-1=0$ which is divisible by $3$
+- induction step
+  - for IH, let $k>0$ be an arbitrary integer and assume that $4^k-1$ is divisible by $3$
+  - wts $4^{k+1}-1$ is divisible by $3$
+$$
+\begin{align*}
+\because\,&4^k-1\textsf{ is divisible by }3\tag{\sf IH}\\
+\therefore\,&\textsf{by def, there is an integer }m\textsf{ st }4^k-1=3m\tag{\sf PA1}\\
+  \therefore\,&4^{k+1}-1=\underline{4\cdot4^k}-1=\underline{3\cdot4^k+\color{red}4^k}{\color{red}-1}=3\cdot4^k+{\color{red}3m}=3(4^k+m)\\
+  \because\,&k\textsf{ and }m\textsf{ are integers, so is }4^k+m\\
+  \therefore\,&\textsf{by def, }4^{k+1}-1=3(4^k+m)\textsf{ is divisible by }3\textsf{ as wanted}\\
+\end{align*}
+$$
+- $\therefore$ by PMI $4^n-1$ is divisible by $3$ for any integer $n>0$
+</details>
+
+<details class="example" open>
+<summary>(PMI) (T1 W22) wts $\sum_0^n 2/3^i\lt3$ for all nonnegative integers $n$</summary>
+let $\displaystyle S_n=\sum_{i=0}^n\frac2{3^i}=2+\frac23+\frac29+\cdots+\frac2{3^n}$
+
+- draft (pretend i forgot a31 or a37)
+  $$
+  \begin{align*}
+    S_1&=2+\frac23&=3-\frac13&=3-\frac1{3^1}\\
+    S_2&=2+\frac89&=3-\frac19&=3-\frac1{3^2}\\
+  \end{align*}
+  $$
+  - $\therefore$ suspect $\displaystyle S_n=3-1/{3^n}$
+  - $\displaystyle\because S_n=3-1/{3^n}\implies S_n<3$
+  - $\therefore$ worth a try
+
+- let $P(n)$ be $S_n=3-1/3^n<3$
+- we use PSI to prove that $P(n)$ is true for any integer $n>0$
+- basis step:
+  - $P(1)$ is the statement $S_1=3-1/3<3$
+  - this is true because $S_1=2+2/3=(2+1)+(-1+2/3)=3-1/3<3$
+- induction step:
+  - for IH, let $k>0$ be an arbitrary integer and assume that $S_k=3-1/3^k<3$
+  - wts $S_{k+1}=3-1/3^{k+1}<3$
+  $$
+  \begin{align*}
+    S_{k+1}&={\color{red}2+\frac23+\frac29+\cdots+\frac2{3^k}}+\frac2{3^{k+1}}\\
+    &={\color{red}S_k}+\frac2{3^{k+1}}\tag{\sf def of $S_k$}\\
+    &={\color{red}3-\frac1{3^k}}+\frac2{3^{k+1}}\tag{\sf IH}\\
+    &=3-\frac3{3\cdot 3^k}+\frac2{3^{k+1}}=3-\frac3{3^{k+1}}+\frac2{3^{k+1}}\\
+    &=3-\frac1{3^{k+1}}\\
+  \end{align*}
+  $$
+  $$
+  \begin{align*}
+    \because\,&k>0\\
+    \therefore\,&\frac1{3^{k+1}}>0\\
+    \therefore\,&S_{k+1}=3-\frac1{3^k+1}<3\textsf{ as wanted}
+  \end{align*}
+  $$
+- $\therefore$ by PMI $\displaystyle S_n=\sum_{i=0}^n\frac2{3^i}<3$ for any nonnegative integer $n\quad\blacksquare$
+</details>
