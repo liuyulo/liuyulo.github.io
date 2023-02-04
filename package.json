@@ -1,0 +1,22 @@
+{
+    "name": "liuyulo.github.io",
+    "version": "0.0.1",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "dev": "astro dev --port 5173",
+        "start": "astro dev",
+        "build": "astro build",
+        "preview": "astro preview",
+        "astro": "astro"
+    },
+    "devDependencies": {
+        "@astrojs/mdx": "^0.15.2",
+        "@floaterest/color": "1.0.0",
+        "@floaterest/iosevka": "^1.0.0",
+        "astro": "^2.0.4",
+        "rehype-katex": "^6.0.2",
+        "remark-math": "^5.1.1",
+        "sass": "^1.58.0"
+    }
+}
