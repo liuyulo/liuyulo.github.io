@@ -31,6 +31,42 @@ $$
 - $\therefore$ by PMI $4^n-1$ is divisible by $3$ for any integer $n>0$
 </details>
 
+<details class="example">
+<summary>bonus wts $4^n-1$ is divisible by $3$</summary>
+let any $n\in\mathbb N$, then consider $(2^n-1)(2^n)(2^n+1)$
+- $\because$ its product of 3 consecutive integers
+- $\therefore$ one of $2^n-1$, $2^n$, $2^n+1$ must be divisible by $3$
+- $\because 2^n$ only has $2$ as its factors
+- $\therefore 2^n$ is not divisible by $3$
+- $\therefore 2^n-1$ or $2^n+1$ is divisible by $3$
+- $\therefore 4^n-1=(2^n-1)(2^n+1)$ is divisible by $3\quad\blacksquare$
+</details>
+
+<details class="example">
+<summary>bonus bonus wts $(4^n-1)\textrm{ mod }3=0$</summary>
+let any $n\in\mathbb N$
+$$
+\begin{align*}
+  \because\,& 4\textrm{ mod }3=1\\
+  \therefore\,&4^n\textrm{ mod }3=(4\textrm{ mod }3)^n=1\\
+  \therefore\,&4^n\textrm{ mod }3-1=0\\
+  \therefore\,&(4^n-1)\textrm{ mod }3=0\quad\blacksquare\\
+\end{align*}
+$$
+</details>
+
+<details class="example">
+<summary>bonus bonus bonus wts $4^n-1$ is divisible by $3$</summary>
+$$
+\begin{align*}
+  \because\,& 4^n=10\cdots00_{(4)}\\
+  \therefore\,&4^n-1=9\cdots99_{(4)}\\
+  \therefore\,&\frac{4^n-1}3=3\cdots33_{(4)}\in\mathbb N\\
+  \therefore\,&4^n-1\textsf{ is divisible by }3\quad\blacksquare
+\end{align*}
+$$
+</details>
+
 <details class="example" open>
 <summary>(PMI) (T1 W22) wts $\sum_0^n 2/3^i\lt3$ for all nonnegative integers $n$</summary>
 let $\displaystyle S_n=\sum_{i=0}^n\frac2{3^i}=2+\frac23+\frac29+\cdots+\frac2{3^n}$
